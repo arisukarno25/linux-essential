@@ -1,0 +1,47 @@
+dasar : agar dapat menginstall package secara efisiein dan cepat
+Debian kembali memimpin dengan melahirkan APT, Advanced Packaging Tool, yang kemudian di porting oleh Conectiva untuk digunakan dengan rpm yang di adopsi oleh berbagai distribusi lainnya.
+
+Semua perintah ini harus dijalankan sebagai root dengan privilege superuser. Ubah <package_name> dengan nama package yang akan di instalasi.
+1. Perinah instalasi
+a. apt-get install <package name> (untuk menginstall suatu package/aplikasi)
+b. apt-get build-dep <package_name> (Perintah untuk menginstalasi package baru, ini perlu Jika package tidak di repository akan memberikan sebuah error.)
+c. apt-get install <package1_name> <package2_name> <package3_name> (install banyak package sekaligus)
+d. sudo apt-get -s install <package_name> (Akan mensimulasikan proses instalasi package memperlihatkan pada kita package apa saja yang akan di instalasi dan di konfigurasi.)
+
+2. auto-apt
+Jika di jalankan, perintah auto-apt akan secara automatis menginstalasi package saat kehilangan akses ke file.
+Auto-apt menyimpan database yang perlu tetap di update agar effektif. Hal ini dapat diperoleh dengan cara memanggil perintah auto-apt update, auto-apt updatedb dan auto-apt update-local.
+Contoh penggunaan auto-apt, misalnya kita sedang mengcompile program, tiba-tiba memperoleh error karena kita membutuhkan sebuah file yang kita tidak memilikinya.
+Program auto-apt akan menanyakan pada kita untuk menginstalasi package yang di butuhkannya, menghentikan proses yang relevan dan meneruskan lagi jika package tersebut sudah di instalasi
+contoh : auto-apt run ./configure (Ini akan menanya untuk menginstalasi package yang dibutuhkan dan secara automatis memanggil apt-get.)
+
+3. Perintah untuk Maintenance
+a. apt-get update (Jalankan perintah ini setelah kita melakukan perubahan pada /etc/apt/sources.list atau /etc/apt/preferences. )
+b. apt-get upgrade (Perintah ini akan mengupgrade semua package yang di instalasi.)
+c. apt-get check (merupapakan  tool diagnostik. Ini akan mengupdate daftar package dan cek dependency yang rusak / salah.)
+d. apt-get autoclean (Perintah ini akan membuang semua file .deb untuk package yang tidak lagi di instalasi di sistem kita)
+e. apt-get clean (Sama seperti di atas, akan tetapi perintah ini akan membuang semua package dari package cache. Ini biasanya akan bermasalah kalau sambungan Internet kita cukup pelan, karena perintah ini akan menyebabkan kita untuk mendownload ulang packages yang kita butuhkan untuk menginstalasi aplikasi.)
+
+4. Perintah untuk Membuang
+a. apt-get remove <package_name> (Perintah ini akan membuang package yang di instal, tapi membiarkan file konfigurasi biasanya di /etc untuk tidak di buang.)
+b. apt-get purge <package_name> (Perintah ini akan berusaha membuang package dan file konfigurasinya. File konfigurasi yang berada di folder / directory ~ biasanya tidak di apa-apakan oleh perintah ini.)
+c. apt-get autoremove (Perintah in akan membuang package yang di instalasi oleh package lain dan tidak lagi dibutuhkan.)
+5. Search Command
+a. apt-cache search <search_term> (Perinta ini akan mencari package yang kita tulis di <search_term>.)
+
+
+Study Case :
+- Contoh, jika kita mencari aplikasi untuk game balapan (racing game), kita dapat mengetik
+command : apt-cache search racing game
+- Kita lihat ada game bernama "torcs". Mari kita telaah lebih lanjut tentang game tersebut, dengan perintah
+command : apt-cache show torcs
+- apakah game ini sudah terinstalasi di komputer? versi mana yang tersedia? Apakah dari universe atau main?
+command : apt-cache policy torcs
+- jika oke, install
+command : apt-get install torcs
+- Akan tetapi kita kehabisan harddisk. Saya akan men-delete apt cache!
+command : apt-get clean
+- Jika kita ingin membuang game dari komputer kita.
+command : apt-get remove torcs
+- Jika kita ingin membuang juga file konfigurasi:
+command : apt-get purge torcs
