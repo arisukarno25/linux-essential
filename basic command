@@ -1,0 +1,39 @@
+1. any_command --help (Menampilkan keterangan bantu tentang pemakaian perintah. "--help")
+misal : ls --help
+2. ls (Melihat isi file dari direktori aktif, bedanya dengan dir adalah ls memiliki pewarnaan pada setiap tipe file)
+misal : ls
+3. cd any_directory (cd: change directori -> membuka folder direktori)
+misal : cd Documents
+4. cd (cd tanpa diikuti directori akan menghantarkan ke home direktori/direktori awal)
+5. cd - (mengembalikan direktori sebelumnya)
+6. ls -al (Melihat seluruh isi file pada direktori aktif beserta file hidden, lalu ditampilkan layar per layar.)
+7. cp source_directory destination_directory (copy file)
+misal : root@ari-ubuntu:/home# cp /home/google-earth.sh /home/ari (ada file nama google-earth.sh di direktori home, dan di copy ke direktori home/ari)
+8. mv source_directory destination_directory (pindah file)
+misal : root@ari-ubuntu:/home# mv /home/google-earth.sh /home/ari (ada file nama google-earth.sh di direktori home, dan di copy ke direktori home/ari)
+9. cp -R source_directory destination_directory (copy folder)
+misal : root@ari-ubuntu:/home/ari/Documents# cp -r /home/ari/Documents/Python /home/ari (folder Python di /home/ari/Documents/Python dipindah ke /home/ari)
+10. mv -R source_directory destination_directory (copy folder)
+misal : root@ari-ubuntu:/home/ari/Documents# cp -r /home/ari/Documents/Python /home/ari (folder Python di /home/ari/Documents/Python dipindah ke /home/ari)
+11. rm files (menghapus file, bukan folder jadi harus dibuka dulu file yang mana)
+misal : rm ari.py
+12. mkdir directory	(Membuat direktori baru)
+misal : mkdir Project-Dicoding
+13. rmdir directory	(Menghapus direktori yang telah kosong, folder wajib kosong)
+misal : rmdir Project-Dicoding
+14. telnet ip_server (melakukan telnet/berkomunikasi dengan server secara virtual)
+misal : telnet 127.0.0.1
+15. rlogin server	(login ke server , (remote login) Menghubungkan anda kekomputer lain. Loginname dan password, tetapi apabila account anda tersebut telah dipakai, maka anda akan mendapatkan pesan kesalahan, TIDAK aman pakai SSH)
+misal : rlogin 127.0.0.1
+16. rlogin server	(login ke server tp juga tidak aman)
+17. rsh server	(sama dengan rlogin, dan tidak aman)
+18. ftp server	(Ftp ke mesin lain, ini sangat berguna untuk mengopy file ke/dari remote mesin. Juga tidak aman, gunakan scp dari keluarga ssh sebagai gantinya.)
+19. shutdown -h now	(sebagai root, mematikan komputer)
+20. halt (sebagai root-> reboot komputer)
+21. init 0 (mematikan komputer, lebih SIMPLE)
+22. init 6 (reboot komputer, lebih SIMPLE)
+23. pwd	(melihat direktori saat ini)
+24. date (menampilkan tanggal)
+25. cal year (menampilkan kalender tahun)
+misal : cal 2020
+26. 
