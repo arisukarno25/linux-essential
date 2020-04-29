@@ -46,5 +46,5 @@ misal : cal 2020
 26. man any_command (sama dengan help)
 27. info any_commanf (sama dengan help juga)
 28. mkdir -p (membuat direktori permanen)
-29. 
+29. cd C: or cd E : or c:/D: (open direktori C/E)
  
