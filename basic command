@@ -47,4 +47,4 @@ misal : cal 2020
 27. info any_commanf (sama dengan help juga)
 28. mkdir -p (membuat direktori permanen)
 29. cd C: or cd E : or c:/D: (open direktori C/E)
- 
+30. rm -r kumpulan\ software or $ rm -r kumpulan/software (hapus file dalam bentu folder meski tidak kosong)
