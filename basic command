@@ -49,3 +49,5 @@ misal : cal 2020
 29. cd C: or cd E : or c:/D: (open direktori C/E)
 30. rm -r kumpulan\ software or $ rm -r kumpulan/software (hapus file dalam bentu folder meski tidak kosong)
 31. grep (pencarian pencarian sebuah pattern dalam file teks yang telah dibuat)
+32. touch name_file.format (make file lewat terminal)
+33. thunar directory_file (make file in current directory)
